@@ -1,5 +1,239 @@
+@import url(./_reset.scss);
+
+/* Variables */
+
+// Colors
+$grayish-200: hsl(252, 11%, 91%);
+$grayish-400: hsl(251, 9%, 53%);
+$grayish-700: hsl(248, 10%, 15%);
+$grayish-900: hsl(248, 15%, 11%);
+
+
+$green-apple: hsl(127, 100%, 82%);
+$red-bright: hsl(0, 91%, 63%);
+$orange: hsl(13, 95%, 66%);
+$yellow: hsl(42, 91%, 68%);
+
+// Fonts
+
+@font-face {
+  font-family: jetBrainsMonoBold;
+  src: url(../public/fonts/static/JetBrainsMono-Bold.ttf);
+}
+
+@font-face {
+  font-family: jetBrainsMonoBoldItalic;
+  src: url(../public/fonts/static/JetBrainsMono-BoldItalic.ttf);
+}
+
+$heading-400: 1.5rem;
+$heading-600: 2rem;
+$body-400: 1.125rem;
+
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: jetBrainsMonoBold;
+  font-size: $body-400;
+  color: $grayish-200;
+  background-color: #08070B;
+}
+
+.page-container {
+  padding: 3rem 1rem;
+
+  #page-title {
+    display: flex;
+    justify-content: center;
+    color: $grayish-400;
+    padding: 1rem;
+  }
+}
+
+.main-container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .generated-password-container {
+    background-color: $grayish-700;
+    padding: 1rem;
+    min-height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      font-weight: 100;
+    }
+  }
+
+  .password-generator-container {
+    display: flex;
+    flex-direction: column;
+    background-color: $grayish-700;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .password-character-length-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .password-character-length-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .password-length {
+        color: $green-apple;
+        font-size: $heading-400;
+      }
+    }
+
+    #passwordLengthSlider {
+      width: 100%;
+    }
+
+    input[type=range] {
+
+      //Styling the track
+      &::-webkit-slider-runnable-track {
+        background: $green-apple;
+        height: 80%;
+      }
+
+      &::-moz-range-track {
+        background: $green-apple;
+        height: 80%;
+      }
+
+      &::-ms-track {
+        background: $green-apple;
+        height: 80%;
+      }
+
+      // Styling the slider thumb
+      &::-webkit-slider-thumb {
+        height: 5rem;
+        width: 5rem;
+        background: $grayish-200;
+      }
+
+      &::-moz-range-thumb {
+        height: 5rem;
+        width: 5rem;
+        background: $grayish-200;
+      }
+
+      &::-ms-thumb {
+        height: 5rem;
+        width: 5rem;
+        background: $grayish-200;
+      }
+
+
+    }
+  }
+
+  .password-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .password-option {
+      display: flex;
+      align-items: center;
+    }
+
+    input[type=checkbox] {
+      // margin-right: 1rem;
+      // width: 1.5rem;
+      // height: 1.5rem;
+      // accent-color: $green-apple;
+      // background-color: transparent;
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      padding: 0;
+
+    }
+
+    .check-container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 17px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      width: fit-content;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1.25rem;
+      width: 1.25rem;
+      background-color: $grayish-700;
+      border: 2px solid $grayish-200;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    }
+
+    .check-container:hover input~.checkmark {
+      border-color: $green-apple;
+    }
+
+    .check-container input:checked~.checkmark {
+      background-color: $green-apple;
+      border: 2px solid $green-apple;
+
+      //Display checkmark when input checked
+      &:after {
+        display: block;
+      }
+
+    }
+
+    //Checkmark style
+    .check-container .checkmark:after {
+      left: 0.3rem;
+      top: 0.1rem;
+      width: 7px;
+      height: 11px;
+      border: solid $grayish-700;
+      color: $grayish-900;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  .password-strength-container {
+    background-color: $grayish-900;
+    padding: 1rem
+  }
+
+  .primary-button {
+    padding: 1rem;
+    background-color: $green-apple;
+    border: none;
+    text-transform: uppercase;
+    font-family: jetBrainsMonoBold;
+  }
+
 }
