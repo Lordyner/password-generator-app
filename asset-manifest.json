@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/password-generator-app/static/css/main.bf4f4ac2.css",
+    "main.js": "/password-generator-app/static/js/main.128b7af6.js",
+    "static/media/JetBrainsMono-BoldItalic.ttf": "/password-generator-app/static/media/JetBrainsMono-BoldItalic.0b8164d760caecf84507.ttf",
+    "static/media/JetBrainsMono-Bold.ttf": "/password-generator-app/static/media/JetBrainsMono-Bold.a0394baa305e2ce71971.ttf",
+    "index.html": "/password-generator-app/index.html",
+    "static/media/icon-copy.svg": "/password-generator-app/static/media/icon-copy.c00fcf20217a486689713679f8ec9e05.svg",
+    "static/media/icon-arrow-right.svg": "/password-generator-app/static/media/icon-arrow-right.6f919c9ee4525a9948a9e391ae915648.svg",
+    "main.bf4f4ac2.css.map": "/password-generator-app/static/css/main.bf4f4ac2.css.map",
+    "main.128b7af6.js.map": "/password-generator-app/static/js/main.128b7af6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf4f4ac2.css",
+    "static/js/main.128b7af6.js"
+  ]
+}
