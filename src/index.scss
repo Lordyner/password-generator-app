@@ -71,6 +71,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 33.75rem;
 
     img {
       font-weight: 100;
@@ -106,6 +107,7 @@ body {
     background-color: $grayish-700;
     padding: 1rem;
     gap: 1rem;
+    max-width: 33.75rem;
   }
 
   .password-character-length-container {
@@ -129,40 +131,77 @@ body {
     }
 
     input[type=range] {
+      background-color: $grayish-700;
 
       //Styling the track
       &::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
         background: $green-apple;
-        height: 80%;
+        height: 0.5rem;
       }
 
       &::-moz-range-track {
+        -webkit-appearance: none;
         background: $green-apple;
-        height: 80%;
+        height: 0.5rem;
       }
 
       &::-ms-track {
+        -webkit-appearance: none;
         background: $green-apple;
-        height: 80%;
+        height: 0.5rem;
       }
 
       // Styling the slider thumb
       &::-webkit-slider-thumb {
-        height: 5rem;
-        width: 5rem;
+        -webkit-appearance: none;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
         background: $grayish-200;
+
+        transition: background .3s ease-in-out;
+
+        &:hover,
+        &:active {
+          cursor: pointer;
+          background: $grayish-700;
+          border: 2px solid $green-apple;
+        }
       }
 
       &::-moz-range-thumb {
-        height: 5rem;
-        width: 5rem;
+        -webkit-appearance: none;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
         background: $grayish-200;
+
+        transition: background .3s ease-in-out;
+
+        &:hover,
+        &:active {
+          cursor: pointer;
+          background: $grayish-700;
+          border: 2px solid $green-apple;
+        }
       }
 
       &::-ms-thumb {
-        height: 5rem;
-        width: 5rem;
+        -webkit-appearance: none;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
         background: $grayish-200;
+
+        transition: background .3s ease-in-out;
+
+        &:hover,
+        &:active {
+          cursor: pointer;
+          background: $grayish-700;
+          border: 2px solid $green-apple;
+        }
       }
 
 
@@ -301,6 +340,10 @@ body {
   }
 
   .primary-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     padding: 1rem;
     background-color: $green-apple;
     border: none;
@@ -312,7 +355,16 @@ body {
     &:hover {
       color: $green-apple;
       background-color: $grayish-700;
+      fill: $green-apple;
+
+      & svg path {
+        fill: $green-apple;
+      }
     }
   }
+
+
+
+
 
 }
