@@ -1,7 +1,6 @@
 import OptionsPassword from './OptionsPassword';
 import PasswordStrength from './PasswordStrength';
 import SliderCharacterLength from './SliderCharacterLength';
-import iconRightArrow from '../images/icon-arrow-right.svg'
 import useData from '../Hooks/useData';
 import { generate } from 'generate-password-browser';
 
@@ -18,7 +17,6 @@ const PasswordGenerator = () => {
 
 
     const generatePassword = () => {
-
         setPasswordStrength(0);
         let i = 0
         for (const option of Object.values(options)) {
@@ -27,14 +25,18 @@ const PasswordGenerator = () => {
                 setPasswordStrength(i);
             }
         }
+        try {
+            setGeneratedPassword(generate({
+                length: characterLength,
+                uppercase: options.includeUppercase,
+                lowercase: options.includeLowerCase,
+                numbers: options.includeNumbers,
+                symbols: options.includeSymbols
+            }));
+        } catch (error) {
+            alert(error);
+        }
 
-        setGeneratedPassword(generate({
-            length: characterLength,
-            uppercase: options.includeUppercase,
-            lowercase: options.includeLowerCase,
-            numbers: options.includeNumbers,
-            symbols: options.includeSymbols
-        }));
 
     }
 
